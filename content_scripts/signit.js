@@ -48,8 +48,9 @@
 
 	var selectionToHintIconCoords = function (coords,shiftX,shiftY){
 		console.log(coords);
+    commandShift=32
 		const iconX = coords.x + coords.width + shiftX;
-		const iconY = coords.y - shiftY;
+		const iconY = coords.y - shiftY + commandshift;
 		return { x: iconX, y: iconY }
 	}
 

@@ -69,6 +69,7 @@ var state = 'up', // up, loading, ready, error
 		hinticon: true,
 		coloredwords: true,
 		choosepanels: 'both', // issues/36
+		position: "top"
 	};
 
 /* *************************************************************** */
@@ -259,6 +260,12 @@ async function changeUiLanguage( newLang ) {
 	await storeParam( 'uiLanguage', newLang ); // localStorage save
 }
 
+//position
+async function changePosition( newPosition){
+	console.log('changePosition', newPosition);
+	await storeParam( 'position', newPosition ); // localStorage save
+}
+
 
 /* *************************************************************** */
 /* Toolbox functions ********************************************* */
@@ -432,6 +439,7 @@ async function main() {
 	signLanguage = await getStoredParam( 'signLanguage' );
 	signLanguages = await getSignLanguagesWithVideos();
 	uiLanguage = await getStoredParam( 'uiLanguage' );
+	position=await getStoredParam( 'position' );
 	console.log("supportedUiLanguages",supportedUiLanguages)
 	uiLanguages = supportedUiLanguages;
 	records = await getAllRecords( signLanguage );
